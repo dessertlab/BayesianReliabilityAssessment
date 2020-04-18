@@ -21,7 +21,6 @@ public class TestFrame{
 
 	private String name;
 	private String tfID;
-	private ArrayList<TestCase> testCases;
 	
 	public void setSelPayload(String selPayload) {
 		this.selPayload = selPayload;
@@ -46,7 +45,6 @@ public class TestFrame{
 
 	public TestFrame() {
 		super();
-		testCases = new ArrayList<TestCase>();
 		finalToken="";
 	}
 
@@ -79,15 +77,7 @@ public class TestFrame{
 	}
 
 
-	public TestFrame(String _name, String _tfID, ArrayList<TestCase> _testCases, double _failureProb, double _occurrenceProb) {
-		super();
-		this.name = _name;
-		this.tfID = _tfID;
-		this.testCases = _testCases;
-		this.failureProb = _failureProb;
-		this.occurrenceProb = _occurrenceProb;
-		finalToken="";
-	}
+	
 
 	public TestFrame(String _service, String _name, String _tfID, String _reqType, double _failureProb, double _occurrenceProb, String _payload) {
 		super();
@@ -102,7 +92,7 @@ public class TestFrame{
 	}
 
 	// HTTP GET request
-	public void sendGet() throws Exception {
+	public int sendGet() throws Exception {
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
@@ -136,11 +126,11 @@ public class TestFrame{
 				con.disconnect();
 			}
 		}
-
+		return responseCode;
 	}
 
 	// HTTP POST request
-	public void sendPost() throws Exception {
+	public int sendPost() throws Exception {
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -185,10 +175,11 @@ public class TestFrame{
 				con.disconnect();
 			}
 		}
+		return responseCode;
 	}
 
 	// HTTP PUT request
-	public void sendPut() throws Exception {
+	public int sendPut() throws Exception {
 		responseCode = 0;
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -229,14 +220,10 @@ public class TestFrame{
 				con.disconnect();
 			}
 		}
-
+return responseCode;
 	}
 
 
-	public void addTestCase(String name, String tcID){
-		TestCase tc = new TestCase(name, tcID);
-		testCases.add(tc);
-	}
 
 	/****************Experimental Version*********************/	
 	//	private static Scanner scan = new Scanner(System.in);

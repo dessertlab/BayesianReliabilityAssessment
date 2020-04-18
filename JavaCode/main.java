@@ -38,12 +38,9 @@ public class main {
 		double[] profile = new double[numberOfPartitions];
 		//by default, we set it as uniform.
 		try {
-			main.getUniformProfile(numberOfPartitions);
+			profile = main.getUniformProfile(numberOfPartitions);
 		} catch (Exception e1) {e1.printStackTrace();} 
-		profile[0] = 1.0/numberOfPartitions;
-		profile[1] = 1.0/numberOfPartitions;
-		profile[2] = 1.0/numberOfPartitions;
-		profile[3] = 1.0/numberOfPartitions;
+		
 		//To get the prfile from a file, store a file in baseDir/profile.txt and invoke getProfileFromFile
 		
 		/** 

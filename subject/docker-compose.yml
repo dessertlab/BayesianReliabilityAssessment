@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+
+  prose:
+    image: mtnfog/prose:1.1.0
+    ports: ["8060:8060"]
+    networks:
+      - back-tier
+
+  renku:
+    image: mtnfog/renku:1.1.0
+    ports: ["7070:7070"]
+    networks:
+      - back-tier
+
+  sonnet:
+    image: mtnfog/sonnet:1.1.0
+    ports: ["9040:9040"]
+    networks:
+      - back-tier
+
+  idyle3:
+    image: mtnfog/idyl-e3:3.0.0
+    ports: ["9000:9000"]
+    networks:
+      - back-tier
+
+  verso:
+    image: mtnfog/verso:1.0.0
+    ports: ["7080:7080"]
+    networks:
+      - back-tier
+
+networks:
+  back-tier:

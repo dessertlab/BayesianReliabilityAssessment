@@ -15,7 +15,8 @@ import java.util.ArrayList;
  */
 public class main {
 
-	public static String baseDir = "/Users/robertopietrantuono/Dropbox/Papers/in_preparazione/RESS/";
+	//CHANGE THIS
+	public static String baseDir = "base/directory";  
 
 	public static void main(String[] args) {
 

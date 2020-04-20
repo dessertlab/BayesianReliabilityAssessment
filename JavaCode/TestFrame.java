@@ -121,6 +121,12 @@ public class TestFrame{
 
 			//print result
 			//		System.out.println(response.toString());
+		}catch (Exception e) {
+			if (con.getResponseCode()==500){
+				return 500;
+			}else
+				e.printStackTrace();
+			throw e; 
 		} finally {
 			if (con != null) {
 				con.disconnect();
@@ -170,7 +176,13 @@ public class TestFrame{
 				//print result
 				System.out.println(response.toString());
 			}
-		} finally {
+		}catch (Exception e) {
+			if (con.getResponseCode()==500){
+				return 500;
+			}else
+				e.printStackTrace();
+			throw e; 
+		}  finally {
 			if (con != null) {
 				con.disconnect();
 			}
@@ -215,6 +227,12 @@ public class TestFrame{
 
 			//print result
 			//		System.out.println(response.toString());
+		} catch (Exception e) {
+			if (con.getResponseCode()==500){
+				return 500;
+			}else
+				e.printStackTrace();
+			throw e; 
 		} finally {
 			if (con != null) {
 				con.disconnect();

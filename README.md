@@ -44,10 +44,10 @@ The JavaCode folder contains experimental code to ease the execution of tests on
 To use it:
 - Import the source code in an IDE (e.g., Eclipse).
 - Select a subject. 
-- Define partitions (called Test Frames) and an operational profile for the subject under test, as exemplified in the Java code (file main.Java)
-- Modify the endpoints of the endpoint of the service API to invoke (in the example there is the localhost of subject under test, the NLP-Prose APIs)
-- Define input classes. The TestFrame class defines some example classes to generate Strings with different features. This can be customised depending on the need.
+- Modify the endpoints of the service API to invoke. 
+- Optionally, define a profile for the partitions (if not defined, a uniform profile is generated). 
+- Optionally, modify the type of input classes generated. The TestFrame class defines some example classes to generate Strings with different features. This can be customised depending on the need.
 - Deploy the subject
-- Run the main.class file. Results are printed on the console. The response code is used as oracle to get the number of demands and of failed demands. 
+- Run the main.class file. Results are printed to a file output.txt. The response code is used as oracle to get the number of demands and of failed demands. 
 
 Finally, the source code of NLP-Building-Blocks is uploaded, with instructions on how to deploy it (via docker) and how to invoke it. The name of the APIs are in the source folder. 
